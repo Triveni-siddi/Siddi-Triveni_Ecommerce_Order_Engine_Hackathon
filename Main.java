@@ -183,6 +183,8 @@ public class Main {
         String orderId = prompt("Order ID");
         orderService.searchOrder(orderId);
     }
+	PaymentService paymentService = new PaymentService();
+orderService = new OrderService(productService, cartService, fraudService, paymentService);
  
     static void advanceOrderState() {
         System.out.println("\n  === Advance Order State ===");
