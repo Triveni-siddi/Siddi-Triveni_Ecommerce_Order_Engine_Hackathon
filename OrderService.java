@@ -95,6 +95,10 @@ public class OrderService {
         System.out.println(success ? "   Payment SUCCESS" : "   Payment FAILED");
         return success;
     }
+	PaymentService.PaymentResult result = paymentService.processPayment(orderId, userId, total);
+	if (!result.isSuccess()) {
+    // rollback logic...
+	}
  
     // Task 12: Cancel order
     public boolean cancelOrder(String orderId, String userId) {
