@@ -18,10 +18,11 @@ public class OrderService {
  
     private int orderCounter = 100;
  
-    public OrderService(ProductService productService, CartService cartService, FraudService fraudService) {
+    public OrderService(ProductService productService, CartService cartService, FraudService fraudService,PaymentService paymentService) {
         this.productService = productService;
         this.cartService = cartService;
         this.fraudService = fraudService;
+		 this.paymentService  = paymentService;
     }
  
     // Task 5: Place order — atomic
